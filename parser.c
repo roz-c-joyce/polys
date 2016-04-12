@@ -200,7 +200,13 @@ void parse_file ( char * filename,
     else if ( strncmp(line, "display", strlen(line)) == 0 ) {
       clear_screen(s);
       draw_polygons(pm, s, g);
-      display(s);
+      //printf("THE ISSUE IS HERE\n");
+      //display(s);
+      //printf("ISSUE AVERTED\n");
+      //
+      //
+      //so i have been having repeated issue with imagemagik and thus display doesnt work, so i test by saving as a png
+      save_extension(s, "parser.png");
     }
     else if ( strncmp(line, "save", strlen(line)) == 0 ) {
       fgets(line, 255, f);
